@@ -1,0 +1,623 @@
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Trabalho 1 - PF 2022.1</title>
+    <meta http-equiv="Content-Type" content="text/html" charset="utf-8">
+</head>
+
+<body>
+    <h1>COMP0393 - FUNCTIONAL PROGRAMMING</h1>
+    <h2>EXERCISE 1 - CRYPTOGRAPHATED TEXT</h2>
+    <!-- ALTERAR NÚMERO DA TURMA -->
+    <h3>TEAM 6</h3>
+    <h3>TEAM NAMES:</h3>
+    <ol>
+        <!-- ALTERAR NOMES DOS INTEGRANTES DA EQUIPE -->
+        <li>ARIEL LIMA ABADE BANDEIRA</li>
+        <li>BRENO EMANOEL DOS SANTOS ANDRADE</li>
+        <li>JOSE ANTONIO DE GOES NETO</li>
+        <li>VICTOR L. BENEVIDES C. DE OLIVEIRA</li>
+    </ol>
+    <hr>
+    <h2>READING OF THE ORIGINAL FILE</h2>
+    <input type="file" name="inputfile" id="inputfile" onchange="processa(this)">
+	<br>
+
+    <h2>CRYPTOGRAPHATED TEXT</h2>
+	<pre id="output"></pre>
+    
+    <script type="text/javascript">
+        const processa = (elem) => {
+            const fr = new FileReader()
+            fr.readAsText(elem.files[0])
+            fr.onload = () => codifica(fr.result)
+        }
+        const codifica = (texto) => {
+
+            /*** SEU CÓDIGO AQUI 
+            Você deve utilizar exclusivamente este espaço para sua codificação.
+            Entretanto, você pode definir quantas funções auxiliares você desejar/precisar
+            fora desse callback e usa-las aqui dentro.
+            ***/ 
+        //CODIFICADOR LETRAS MINUSCULAS SEM CASE SENSITIVE
+const transformerA  = texto  => texto.replace(modificadorletraA ,ascii(42))
+const transformerB  = texto  => texto.replace(modificadorletraB ,ascii(43))
+const transformerC  = texto  => texto.replace(modificadorletraC ,"¬")
+const transformerD  = texto  => texto.replace(modificadorletraD ,ascii(45))
+const transformerE  = texto  => texto.replace(modificadorletraE ,"¢")
+const transformerF  = texto  => texto.replace(modificadorletraF ,ascii(47))
+const transformerG  = texto  => texto.replace(modificadorletraG ,ascii(48))
+const transformerH  = texto  => texto.replace(modificadorletraH ,ascii(49))
+const transformerI  = texto  => texto.replace(modificadorletraI ,ascii(50))
+const transformerJ  = texto  => texto.replace(modificadorletraJ ,ascii(51))
+const transformerK  = texto  => texto.replace(modificadorletraK ,ascii(52))
+const transformerL  = texto  => texto.replace(modificadorletraL ,ascii(53))
+const transformerM  = texto  => texto.replace(modificadorletraM ,ascii(54))
+const transformerN  = texto  => texto.replace(modificadorletraN ,ascii(55))
+const transformerO  = texto  => texto.replace(modificadorletraO ,ascii(56))
+const transformerP  = texto  => texto.replace(modificadorletraP ,ascii(57))
+const transformerQ  = texto  => texto.replace(modificadorletraQ ,"§")
+const transformerR  = texto  => texto.replace(modificadorletraR ,"º")
+const transformerS  = texto  => texto.replace(modificadorletraS ,ascii(60))
+const transformerT  = texto  => texto.replace(modificadorletraT ,ascii(61))
+const transformerU  = texto  => texto.replace(modificadorletraU ,ascii(62))
+const transformerV  = texto  => texto.replace(modificadorletraV ,ascii(63))
+const transformerW  = texto  => texto.replace(modificadorletraW ,ascii(64))
+const transformerX  = texto  => texto.replace(modificadorletraX ,ascii(65))
+const transformerY  = texto  => texto.replace(modificadorletraY ,ascii(66))
+const transformerZ  = texto  => texto.replace(modificadorletraZ ,ascii(67))
+const transformerspace = texto  => texto.replace(modificadorESPACO, ' ' )
+
+//CODIFICAR DOS NÚMEROS
+
+const transformer0 = texto => texto.replace(modificadornumero0, ascii(32))
+const transformer1 = texto => texto.replace(modificadornumero1, ascii(33))
+const transformer2 = texto => texto.replace(modificadornumero2, ascii(34))
+const transformer3 = texto => texto.replace(modificadornumero3, ascii(35))
+const transformer4 = texto => texto.replace(modificadornumero4, ascii(36))
+const transformer5 = texto => texto.replace(modificadornumero5, ascii(37))
+const transformer6 = texto => texto.replace(modificadornumero6, ascii(38))
+const transformer7 = texto => texto.replace(modificadornumero7, ascii(39))
+const transformer8 = texto => texto.replace(modificadornumero8, ascii(40))
+const transformer9 = texto => texto.replace(modificadornumero9, ascii(41))
+
+//CODIFICADOR DAS LETRAS MINÚSCULAS COM ACENTO AGUDO NORMAL
+
+const transformer_á = texto =>texto.replace(modificadorletra_á, ascii(94))
+const transformer_é = texto =>texto.replace(modificadorletra_é, ascii(95))
+const transformer_í = texto =>texto.replace(modificadorletra_í, ascii(96))
+const transformer_ó = texto =>texto.replace(modificadorletra_ó, ascii(97))
+const transformer_ú = texto =>texto.replace(modificadorletra_ú, ascii(98))
+
+// CODIFICADOR DAS LETRAS MAIÚSCULAS COM ACENTO AGUDO INVERTIDO
+
+const transformer_À = texto =>texto.replace(modificadorletra_À, ascii(99))
+const transformer_È = texto =>texto.replace(modificadorletra_È, ascii(100))
+const transformer_Ì = texto =>texto.replace(modificadorletra_Ì, ascii(101))
+const transformer_Ò = texto =>texto.replace(modificadorletra_Ò, ascii(102))
+const transformer_Ù = texto =>texto.replace(modificadorletra_Ù, ascii(103))
+
+//CODIFICADOR DAS LETRAS MÍNUSCULAS COM ACENTO AGUDO INVERTIDO
+
+const transformer_à = texto =>texto.replace(modificadorletra_à, ascii(104))
+const transformer_è = texto =>texto.replace(modificadorletra_è, ascii(105))
+const transformer_ì = texto =>texto.replace(modificadorletra_ì, ascii(106))
+const transformer_ò = texto =>texto.replace(modificadorletra_ò, ascii(107))
+const transformer_ù = texto =>texto.replace(modificadorletra_ù, ascii(108))
+
+
+//CODIFICADOR DAS LETRAS MÍNUSCULAS COM ACENTO CIRCUNFLEXO
+
+const transformer_â = texto =>texto.replace(modificadorletra_â, ascii(109))
+const transformer_ê = texto =>texto.replace(modificadorletra_ê, ascii(110))
+const transformer_î = texto =>texto.replace(modificadorletra_î, ascii(111))
+const transformer_ô = texto =>texto.replace(modificadorletra_ô, ascii(112))
+const transformer_û = texto =>texto.replace(modificadorletra_û, ascii(113))
+
+//CODIFICADOR DAS LETRAS MAÍSCULAS COM ACENTO CIRCUNFLEXO
+
+const transformer_Â = texto =>texto.replace(modificadorletra_Ã, ascii(114))
+const transformer_Ê = texto =>texto.replace(modificadorletra_Ê, ascii(115))
+const transformer_Î = texto =>texto.replace(modificadorletra_Î, ascii(116))
+const transformer_Ô = texto =>texto.replace(modificadorletra_Ô, ascii(117))
+const transformer_Û = texto =>texto.replace(modificadorletra_Û, ascii(118))
+
+//CODIFICADOR DO TIO E U COM TREMA
+
+const transformer_ã = texto =>texto.replace(modificadorletra_ã, ascii(119)) 
+const transformer_õ = texto =>texto.replace(modificadorletra_õ, ascii(120))
+const transformer_Ã = texto =>texto.replace(modificadorletra_Ã, ascii(121))
+const transformer_Õ = texto =>texto.replace(modificadorletra_Õ, ascii(122))
+const transformer_Ü = texto =>texto.replace(modificadorletra_Ü, ascii(123))
+const transformer_ü = texto =>texto.replace(modificadorletra_ü, ascii(124))
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////
+//MODIFICADOR DAS LETRAS MÍNUSCULAS SEM CASE SENSEITIVE POR CAUSA DO GI
+const modificadorletraA = /a/gi
+const modificadorletraB = /b/gi
+const modificadorletraC = /c/gi
+const modificadorletraD = /d/gi
+const modificadorletraE = /e/gi
+const modificadorletraF = /f/gi
+const modificadorletraG = /g/gi
+const modificadorletraH = /h/gi
+const modificadorletraI = /i/gi
+const modificadorletraJ = /j/gi
+const modificadorletraK = /k/gi
+const modificadorletraL = /l/gi
+const modificadorletraM = /m/gi
+const modificadorletraN = /n/gi
+const modificadorletraO = /o/gi
+const modificadorletraP = /p/gi
+const modificadorletraQ = /q/gi
+const modificadorletraR = /r/gi
+const modificadorletraS = /s/gi
+const modificadorletraT = /t/gi
+const modificadorletraU = /u/gi
+const modificadorletraV = /v/gi
+const modificadorletraW = /w/gi
+const modificadorletraX = /x/gi
+const modificadorletraY = /y/gi
+const modificadorletraZ = /z/gi
+const modificadorESPACO = /\s/gi
+
+//MODIFICADOR LETRAS MAIÚSCULAS SEM CASE SENSITIVE
+
+// ESPAÇO PARA ESCREVER O CÓDIGO DO MODIFICADOR LETRAS MAIÚSCULAS SEM CASE SENSITIVE //
+
+//MODIFICAOR NÚMERICO 
+
+const modificadornumero0 = /0/
+const modificadornumero1 = /1/
+const modificadornumero2 = /2/
+const modificadornumero3 = /3/
+const modificadornumero4 = /4/
+const modificadornumero5 = /5/
+const modificadornumero6 = /6/
+const modificadornumero7 = /7/
+const modificadornumero8 = /8/
+const modificadornumero9 = /9/
+
+//MODIFICADOR DAS LETRAS MINÚSCULAS COM ACENTO AGUDO NORMAL
+
+const modificadorletra_á = /á/
+const modificadorletra_é = /é/
+const modificadorletra_í = /í/
+const modificadorletra_ó = /ó/
+const modificadorletra_ú = /ú/
+
+//MODIFICADOR DAS LETRAS MAIÚSCULAS COM ACENTO AGUDO INVERTIDO
+const modificadorletra_À = /À/
+const modificadorletra_È = /È/
+const modificadorletra_Ì = /Ì/
+const modificadorletra_Ò = /Ò/
+const modificadorletra_Ù = /Ù/
+
+//MODIFICADOR DAS LETRAS MÍNUSCULAS COM ACENTO AGUDO INVERTIDO
+
+const modificadorletra_à = /à/
+const modificadorletra_è = /è/
+const modificadorletra_ì = /ì/
+const modificadorletra_ò = /ò/
+const modificadorletra_ù = /ù/
+
+//MODIFICADOR DAS LETRAS MÍNUSCULAS COM ACENTO CIRCUNFLEXO
+
+const modificadorletra_â = /â/
+const modificadorletra_ê = /ê/
+const modificadorletra_î = /î/
+const modificadorletra_ô = /ô/
+const modificadorletra_û = /û/
+
+//MODIFICADOR DAS LETRAS MAÍSCULAS COM ACENTO CIRCUNFLEXO
+
+const modificadorletra_Â = /Â/
+const modificadorletra_Ê = /Ê/
+const modificadorletra_Î = /Î/
+const modificadorletra_Ô = /Ô/
+const modificadorletra_Û = /Û/
+
+//MODIFICAR DO TIO E U COM TREMA
+
+const modificadorletra_ã = /â/
+const modificadorletra_õ = /õ/
+const modificadorletra_Ã = /Ã/
+const modificadorletra_Õ = /Õ/
+const modificadorletra_Ü = /Ü/
+const modificadorletra_ü = /ü/
+
+
+
+//MODIFICADOR DE SINAIS E OPERADORES ESPECIFICOS
+
+// ESPAÇO PARA ESCREVER O MODIFICADOR DE SINAIS E OPERADORES ESPECIFICOS //
+
+
+
+const ascii = (num) => String.fromCharCode(num)
+const composicao = (...fns) => (arg) => fns.reduce((acc, fn) => fn(acc), arg);
+
+// CORRESPONDÊNCIA:
+//
+// ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789       áéíóú ÀÈÌÒÙ àèìòù ÂÊÎÔÛ âêîôû  ãõÃÕüÜ
+// *+,-./0123456789:;<=>?@ABC(space) !"#$%&'() ^_`ab cdefg hijkl mnopq Âstuv  ãxrz|{  
+
+const gerarResultado = composicao(
+  //EXECUTA AS FUNÇÕES DOS NÚMEROS
+
+  transformer0,
+  transformer1,
+  transformer2,
+  transformer3,
+  transformer4,
+  transformer5,
+  transformer6,
+  transformer7,
+  transformer8,
+  transformer9,
+
+  //EXECUTA AS FUNÇÕES DE LETRAS MINÚSCULAS COM CASE SENSITIVE
+  transformerA,
+  transformerB,
+  transformerC,
+  transformerD,
+  transformerE,
+  transformerF,
+  transformerG,
+  transformerH,
+  transformerI,
+  transformerJ,
+  transformerK,
+  transformerL,
+  transformerM,
+  transformerN,
+  transformerO,
+  transformerP,
+  transformerQ,
+  transformerR,
+  transformerS,
+  transformerT,
+  transformerU,
+  transformerV,
+  transformerW,
+  transformerX,
+  transformerY,
+  transformerZ,
+  transformerspace,
+
+
+  //EXECUTA AS FUNÇÕES DAS LETRAS MINÚSCULAS COM ACENTO AGUDO NORMAL
+  
+  transformer_á,
+  transformer_é,
+  transformer_í, 
+  transformer_ó, 
+  transformer_ú,
+
+  //EXECUTA AS FUNÇÕES DAS LETRAS MAIÚSCULAS COM ACENTO AGUDO INVERTIDO
+  transformer_À,
+  transformer_È,
+  transformer_Ì,
+  transformer_Ò,
+  transformer_Ù,
+
+
+  //EXECUTA AS FUNÇÕES DAS LETRAS MINÚSCULAS COM ACENTO AGUDO INVERTIDO
+  transformer_à,
+  transformer_è,
+  transformer_ì,
+  transformer_ò,
+  transformer_ù,
+
+
+
+  //EXECUTA AS FUNÇÕES DAS LETRAS MÍNUSCULAS COM ACENTO CIRCUNFLEXO
+  transformer_â,
+  transformer_ê,
+  transformer_î,
+  transformer_ô,
+  transformer_û,
+
+
+  //EXECUTA AS FUNÇÕES DAS LETRAS MAÍSCULAS COM ACENTO CIRCUNFLEXO
+  
+  transformer_Â,
+  transformer_Ê,
+  transformer_Î,
+  transformer_Ô,
+  transformer_Û,
+
+  //EXECUTA AS FUNÇÕES DO TIO E U COM TREMA
+
+  transformer_ã,
+  transformer_õ,
+  transformer_Ã,
+  transformer_Õ,
+  transformer_Ü,
+  transformer_ü,
+  );
+
+console.log('--------------------------------------------------------------------------------')
+console.log('                            texto codificado')
+console.log('--------------------------------------------------------------------------------')
+console.log(gerarResultado(texto),"\n")
+
+            const resultado = gerarResultado(texto) //você deve substituir 'texto' pelo resultado do seu processamento 
+            document.getElementById('output').textContent = resultado  
+        }
+        /*** Defina FUNÇÕES AUXILIARES aqui, caso ache necessário. Nomeie-as como quiser. 
+        const aux1 = ...
+        const aux2 = ...
+        ...
+        ***/
+        const decodifica = (textocodificado) => {
+           
+            /*** Defina sua função de DESCODIFICAÇÃO aqui. 
+            Ela não será usada neste problema,
+            mas deve existir, conforme enunciado do trabalho.
+            ***/
+            const textocriptografado = gerarResultado(texto)
+
+//DECODIFICADOR
+const transformer32 = texto  => texto.replace(modificadornumero32,'0')
+const transformer33 = texto  => texto.replace(modificadornumero33,'1')
+const transformer34 = texto  => texto.replace(modificadornumero34,'2')
+const transformer35 = texto  => texto.replace(modificadornumero35,'3')
+const transformer36 = texto  => texto.replace(modificadornumero36,'4')
+const transformer37 = texto  => texto.replace(modificadornumero37,'5')
+const transformer38 = texto  => texto.replace(modificadornumero38,'6')
+const transformer39 = texto  => texto.replace(modificadornumero39,'7')
+const transformer40 = texto  => texto.replace(modificadornumero40,'8')
+const transformer42  = texto  => texto.replace(modificadornumero42 ,'a')
+const transformer43  = texto  => texto.replace(modificadornumero43 ,'b')
+const transformer44  = texto  => texto.replace(modificadornumero44 ,'c')
+const transformer45  = texto  => texto.replace(modificadornumero45 ,'d')
+const transformer46  = texto  => texto.replace(modificadornumero46 ,'e')
+const transformer47  = texto  => texto.replace(modificadornumero47 ,'f')
+const transformer48  = texto  => texto.replace(modificadornumero48 ,'g')
+const transformer49  = texto  => texto.replace(modificadornumero49 ,'h')
+const transformer50  = texto  => texto.replace(modificadornumero50 ,'i')
+const transformer51  = texto  => texto.replace(modificadornumero51 ,'j')
+const transformer52  = texto  => texto.replace(modificadornumero52 ,'k')
+const transformer53  = texto  => texto.replace(modificadornumero53 ,'l')
+const transformer54  = texto  => texto.replace(modificadornumero54 ,'m')
+const transformer55  = texto  => texto.replace(modificadornumero55 ,'n')
+const transformer56  = texto  => texto.replace(modificadornumero56 ,'o')
+const transformer57  = texto  => texto.replace(modificadornumero57 ,'p')
+const transformer58  = texto  => texto.replace(modificadornumero58 ,'q')
+const transformer59  = texto  => texto.replace(modificadornumero59 ,'r')
+const transformer60  = texto  => texto.replace(modificadornumero60 ,'s')
+const transformer61  = texto  => texto.replace(modificadornumero61 ,'t')
+const transformer62  = texto  => texto.replace(modificadornumero62 ,'u')
+const transformer63  = texto  => texto.replace(modificadornumero63 ,'v')
+const transformer64  = texto  => texto.replace(modificadornumero64 ,'w')
+const transformer65  = texto  => texto.replace(modificadornumero65 ,'x')
+const transformer66  = texto  => texto.replace(modificadornumero66 ,'y')
+const transformer67  = texto  => texto.replace(modificadornumero67 ,'z')
+const transformer68 = texto  => texto.replace(modificadorspace, ' ')
+
+const transformer78 = texto  => texto.replace(modificadornumero78,'á')
+const transformer79 = texto  => texto.replace(modificadornumero79,'é')
+const transformer80 = texto  => texto.replace(modificadornumero80,'í')
+const transformer81 = texto  => texto.replace(modificadornumero81,'ó')
+const transformer82 = texto  => texto.replace(modificadornumero82,'ú')
+const transformer83 = texto  => texto.replace(modificadornumero83,'À')
+const transformer84 = texto  => texto.replace(modificadornumero84,'È')
+const transformer85 = texto  => texto.replace(modificadornumero85,'Ì')
+const transformer86 = texto  => texto.replace(modificadornumero86,'Ò')
+const transformer87 = texto  => texto.replace(modificadornumero87,'Ù')
+const transformer88 = texto  => texto.replace(modificadornumero88,'à')
+const transformer89 = texto  => texto.replace(modificadornumero89,'è')
+const transformer90 = texto  => texto.replace(modificadornumero90,'ì')
+const transformer91 = texto  => texto.replace(modificadornumero91,'ò')
+const transformer92 = texto  => texto.replace(modificadornumero92,'ù')
+const transformer93 = texto  => texto.replace(modificadornumero93,'â')
+const transformer94 = texto  => texto.replace(modificadornumero94,'ê')
+const transformer95 = texto  => texto.replace(modificadornumero95,'î')
+const transformer96 = texto  => texto.replace(modificadornumero96,'ô')
+const transformer97 = texto  => texto.replace(modificadornumero97,'û')
+const transformer98 = texto  => texto.replace(modificadornumero98,'Â')
+const transformer99 = texto  => texto.replace(modificadornumero99,'Ê')
+const transformer100 = texto  => texto.replace(modificadornumero100,'î')
+const transformer101 = texto  => texto.replace(modificadornumero101,'Ô')
+const transformer102 = texto  => texto.replace(modificadornumero102,'Û')
+const transformer103 = texto  => texto.replace(modificadornumero103,'ã')
+const transformer104 = texto  => texto.replace(modificadornumero104,'õ')
+const transformer105 = texto  => texto.replace(modificadornumero105,'Ã')
+const transformer106 = texto  => texto.replace(modificadornumero106,'Õ')
+const transformer107 = texto  => texto.replace(modificadornumero107,'ü')
+const transformer108 = texto  => texto.replace(modificadornumero108,'Ü')
+
+//FILTRAGEM DAS numeros referentes as letras do alfabeto    
+const modificadornumero42 = /\*/gi
+const modificadornumero43 = /\+/gi
+const modificadornumero44 = /\¬/gi
+const modificadornumero45 = /\-/gi
+const modificadornumero46 = /\¢/gi
+const modificadornumero47 = /\//gi
+const modificadornumero48 = /0/gi
+const modificadornumero49 = /1/gi
+const modificadornumero50 = /2/gi
+const modificadornumero51 = /3/gi
+const modificadornumero52 = /4/gi
+const modificadornumero53 = /5/gi
+const modificadornumero54 = /6/gi
+const modificadornumero55 = /7/gi
+const modificadornumero56 = /8/gi
+const modificadornumero57 = /9/gi
+const modificadornumero58 = /\§/gi
+const modificadornumero59 = /\º/gi
+const modificadornumero60 = /\</gi
+const modificadornumero61 = /\=/gi
+const modificadornumero62 = /\>/gi
+const modificadornumero63 = /\?/gi
+const modificadornumero64 = /\@/gi
+const modificadornumero65 = /A/g
+const modificadornumero66 = /B/g
+const modificadornumero67 = /C/g
+const modificadorspace = /§/gi
+//filtragem dos números referentes aos números 0=>9
+const modificadornumero32=/ /gi
+const modificadornumero33 = /\!/gi
+const modificadornumero34 = /\"/gi
+const modificadornumero35 = /\#/gi
+const modificadornumero36 = /\$/gi
+const modificadornumero37 = /\%/gi
+const modificadornumero38 = /\&/gi
+const modificadornumero39 = /\'/gi
+const modificadornumero40 = /\(/gi
+const modificadornumero41 = /\)/gi
+//Filtragem dos números referentes as letras minúsculas acentuadas agudamente
+const modificadornumero78 = /\^/gi
+const modificadornumero79 = /\_/gi
+const modificadornumero80 = /\`/gi
+const modificadornumero81 = /a/g
+const modificadornumero82 = /b/g
+//Filtragem dos números referentes as letras maiúsculas acentuadas agudamente
+const modificadornumero83 = /c/g
+const modificadornumero84 = /d/g
+const modificadornumero85 = /e/g
+const modificadornumero86 = /f/g
+const modificadornumero87 = /g/g
+//filtragem dos números referentes as letras minúsculas acenduadas gravemente
+const modificadornumero88 = /h/g
+const modificadornumero89 = /i/g
+const modificadornumero90 = /j/g
+const modificadornumero91 = /k/g
+const modificadornumero92 = /l/g
+//filtragem dos números referentes as letras maiúsculas acenduadas circunflexamente
+const modificadornumero93 = /m/g
+const modificadornumero94 = /n/g
+const modificadornumero95 = /o/g
+const modificadornumero96 = /p/g
+const modificadornumero97 = /q/g
+//filtragem dos números referentes as letras maiúsculas acenduadas circunflexamente
+const modificadornumero98 = /Â/g
+const modificadornumero99 = /s/g
+const modificadornumero100 = /t/g
+const modificadornumero101 = /u/g
+const modificadornumero102 = /v/g
+// filtragem dos números referentes à ãõÃÕüÜ
+const modificadornumero103 = /ã/g
+const modificadornumero104 = /x/g
+const modificadornumero105 = /r/g
+const modificadornumero106 = /z/g
+const modificadornumero107 = /\|/g
+const modificadornumero108 = /\{/g
+
+const composicaoDescrip = (...fns) => (arg) => fns.reduce((acc, fn) => fn(acc), arg);
+
+const gerarResultadoDescrip = composicaoDescrip (
+  transformer78,
+  transformer79,
+  transformer80,
+  transformer82,
+  transformer81,
+  transformer83,
+  transformer84,
+  transformer85,
+  transformer86,
+  transformer87,
+  transformer88,
+  transformer89,
+  transformer90,
+  transformer91,
+  transformer92,
+  transformer93,
+  transformer94,
+  transformer95,
+  transformer96,
+  transformer97,
+  transformer98,
+  transformer99,
+  transformer101,
+  transformer102,
+  transformer103,
+  transformer104,
+  transformer105,
+  transformer106,
+  transformer107,
+  transformer108,
+  transformer68,
+  transformer65,
+  transformer66,
+  transformer67,
+  transformer42,
+  transformer43,
+  transformer44,
+  transformer45,
+  transformer46,
+  transformer47,
+  transformer48,
+  transformer49,
+  transformer50,
+  transformer51,
+  transformer52,
+  transformer53,
+  transformer54,
+  transformer55,
+  transformer56,
+  transformer57,
+  transformer58,
+  transformer59,
+  transformer60,
+  transformer61,
+  transformer62,
+  transformer63,
+  transformer64,
+ 
+  
+  
+    );
+
+console.log('--------------------------------------------------------------------------------')
+console.log('                         texto descodificado')
+console.log('--------------------------------------------------------------------------------')
+console.log(gerarResultadoDescrip(textocriptografado))
+
+
+/*Explicação do algoritmo de criptografia.
+
+Ordenando todos os caracteres usáveis e comuns diante a qualquer texto em uma matriz, nos relacionamos a posição respectiva de cada caractere, ou seja, sua linha e coluna (y,x), à um número que concatena ambos valores ( (y,x)= yx ).
+Após isso, relacionamos esse número (yx) a um caractere dentro da tabela ASCII. Por exemplo, o caractere 'z' que se localiza em (6,7), assim seu número fica sendo o 67 que corresponde ao caractere 'C' na tabela ASCII.
+Não obstante, vemos que a matriz se ordena de forma diferente, começando pela coluna 2 e linha começando pelo 3. Isso se dá pois, na tabela ASCII, as posições de 0 a 31 são de caracteres não imprimíveis como o (del), que fica na posição 31. Assim, a matriz se organiza principiando do primeiro caractere imprimível (32=" ", ou (space)). 
+
+Nisso, trabalhamos essa ponte com o fim de criarmos uma criptografia mais complexa.
+
+       2 3 4 5 6 7 8 9 X Y
+    3| 0 1 2 3 4 5 6 7 8 9
+    4| a b c d e f g h i j
+    5| k l m n o p q r s t
+    6| u v w x y z A B C D 
+    7| E F G H I J K L M N
+    8| O P Q R S T U V W X 
+    9| Y Z á é í ó ú À È Ì
+   10| Ò Ù à è ì ò ù À È Ì
+   11| Ò Ù â ê î ô û Â Ê Î
+   12| Ô Û ã õ Ã Õ ü Ü , .
+   13| ! ? - ' " : ; ( ) ´
+   14| ` ~ ^ ¨ # $ @ % * \
+   15| / [ ] { } & < >
+
+
+Aqui podemos ver cada caractere da matriz com seu respectivo correspondente na tabela ASCII.
+
+    ABCDEFGHIJKLMNOPQRSTUVWXYZ        0123456789 áéíóú àèìòù ÀÈÌÒÙ ÂÊÎÔÛ âêîôû ãõÃÕüÜ
+    *+,-./0123456789:;<=>?@ABC         !"#$%&'() ^_`ab cdefg hijkl mnopq rstuv wxrz|{
+*/
+
+
+            const resultado = gerarResultadoDescrip(textocriptografado) //você deve substituir 'textocodificado' pelo resultado do seu processamento 
+        }
+        
+
+	</script>
+
+</body>
+
+</html>

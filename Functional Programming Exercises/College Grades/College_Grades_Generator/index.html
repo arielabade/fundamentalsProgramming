@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<title>UFS</title>
+		<link rel="stylesheet" type="text/css" href="reset.css">
+		<link rel="stylesheet" type="text/css" href="index.css">
+	</head>
+	<body>
+
+		<header>
+			<div class="container">
+				<h1 class="titulo">Federal University Of Sergipe</h1>
+			</div>
+		</header>
+		<main>
+			<section class="container">
+				<h2>School Records</h2>
+				<table>
+					<thead>
+						<tr>
+							<th>School Year</th>
+							<th>Grade Code</th>
+                            <th>College Subject</th>
+							<th>Hours</th>
+							<th>Frequency</th>
+							<th>Grades</th>
+                            <th>Approvation Status</th>
+                            <th>Total Hours</th>
+                            <th>Standard Devihation</th>
+                            
+                            
+
+
+
+                            
+
+						</tr>
+					</thead>
+					<tbody id="tabela">
+						<tr class="materia" id="adm0002">
+							<td class="info-ano">2017.1</td>
+							<td class="info-codigo">ADM0002</td>
+							<td class="info-disciplina">ADMNISTRATION INTRODUCTION</td>
+                            <td class="info-ch">60</td>
+							<td class="info-frequencia">83.33%</td>
+							<td class="info-nota">7.1</td>
+                            <td class="info-aprovacao">  </td>
+                            <td class="info-ch-total"> -- </td>
+                            <td class="info-desvio-padrao"> -- </td>
+                          
+                            					
+                        </tr>
+
+                        
+
+
+
+						<tr class="materia">
+							<td class="info-ano">2017.1</td>
+							<td class="info-codigo">COMP0197</td>
+							<td class="info-disciplina">IMPERATIVE PROGRAMMING</td>
+							<td class="info-ch">90</td>
+							<td class="info-frequencia">84.44%</td>
+                            <td class="info-nota">2.2</td>
+                            <td class="info-aprovacao">  </td>
+                            <td class="info-ch-total"> -- </td>
+                            <td class="info-desvio-padrao"> -- </td>
+                           
+                            
+
+						</tr>
+
+						<tr class="materia">
+                            <td class="info-ano">2017.1</td>
+							<td class="info-codigo">MAT0102</td>
+							<td class="info-disciplina">CALCULUS 1</td>
+							<td class="info-ch">90</td>
+							<td class="info-frequencia">100%</td>
+                            <td class="info-nota">9.4</td>
+                            <td class="info-aprovacao">  </td>
+                            <td class="info-ch-total"> -- </td>
+                            <td class="info-desvio-padrao"> -- </td>
+                           
+                            
+						
+                        </tr>
+
+						<tr class="materia">
+							<td class="info-ano">2017.2</td>
+							<td class="info-codigo">LETR0429</td>
+							<td class="info-disciplina">INSTRUMENTAL ENGLISH</td>
+							<td class="info-ch">60</td>
+							<td class="info-frequencia">90%</td>
+                            <td class="info-nota">9.5</td>
+                            <td class="info-aprovacao">  </td>
+                            <td class="info-ch-total"> -- </td>
+                            <td class="info-desvio-padrao"> -- </td>
+                           
+                            
+
+						</tr>
+						<tr class="materia" >
+                            <td class="info-ano">2018.1</td>
+							<td class="info-codigo">ESTAT0011</td>
+							<td class="info-disciplina">APPLIED STATISTICS</td>
+							<td class="info-ch">60</td>
+							<td class="info-frequencia">83.33%</td>
+                            <td class="info-nota">9.2</td>
+                            <td class="info-aprovacao">  </td>
+                            <td class="info-ch-total"> -- </td>
+                            <td class="info-desvio-padrao"> -- </td>
+                           
+                            
+
+						</tr>
+					</tbody>
+				</table>
+
+			</section>
+			
+			<section class="container">
+				<h2 id="titulo-form">ADD New Grade Subject</h2>
+				<h3>Fullfill all the blank spaces below for the code work properly</h3>
+                <p>To erase a table line just click twice on any part of the table</p>
+                <form id="form-adiciona">
+					<div class="grupo">
+						<label for="ano">School Year:</label>
+						<input id="ano" name="ano" type="text" placeholder="Type The School Year" class="campo">
+					</div>
+					<div class="grupo">
+						<label for="codigo">Grade Code:</label>
+						<input id="codigo" name="codigo" type="text" placeholder="Type The Grade Code" class="campo campo-medio">
+					</div>
+					<div class="grupo">
+						<label for="disciplina">School Subject:</label>
+						<input id="disciplina" name="disciplina" type="text" placeholder="Type The School Subject" class="campo campo-medio">
+					</div>
+					<div class="grupo">
+						<label for="ch">Total Hours:</label>
+						<input id="ch" type="text" placeholder="Type The Total Hours" class="campo campo-medio">
+					</div>
+                    <div class="grupo">
+						<label for="nota">Grades:</label>
+						<input id="nota" name="nota" type="text" placeholder="Type The Grades" class="campo campo-medio">
+					</div>
+                    <div class="grupo">
+						<label for="frequencia">Frequency:</label>
+						<input id="frequencia" name="frequencia" type="text" placeholder="Type The Frequency" class="campo campo-medio">
+					</div>
+
+					<button id="adicionar-materia" class="botao bto-principal">ADD DATA</button>
+                    
+				</form>
+			</section>
+		
+		</main>
+		<script src="principal.js"></script>
+        
+        
+    </body>
+</html>
